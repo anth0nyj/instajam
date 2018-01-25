@@ -13,18 +13,34 @@ $(() => {
     const $btn = $('<div>').attr('id', 'btn-' + i).addClass('btn');
     $allBtns.append($btn);
   }
+
+  $('#btn-1').click(() => {
+    const context = new AudioContext();
+
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+
+    // oscillator.connect(context.destination);
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.frequency.value = 440;
+    oscillator.type = 'triangle';
+
+    // gain.volume.value = 0;
+    oscillator.start(0);
+  })
 });
 
-const context = new AudioContext();
-
-const oscillator = context.createOscillator();
-const gain = context.createGain();
-
-// oscillator.connect(context.destination);
-oscillator.connect(gain);
-gain.connect(context.destination);
-oscillator.frequency.value = 440;
-oscillator.type = 'triangle';
-
-// gain.volume.value = 0;
-oscillator.start(0);
+// const context = new AudioContext();
+//
+// const oscillator = context.createOscillator();
+// const gain = context.createGain();
+//
+// // oscillator.connect(context.destination);
+// oscillator.connect(gain);
+// gain.connect(context.destination);
+// oscillator.frequency.value = 440;
+// oscillator.type = 'triangle';
+//
+// // gain.volume.value = 0;
+// oscillator.start(0);
