@@ -19,6 +19,7 @@
   "homepage": "https://github.com/anth0nyj/instajam#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "octavian": "^2.2.0",
     "socket.io": "^2.0.4",
     "tone": "^0.11.11"
   }
