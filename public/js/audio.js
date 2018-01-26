@@ -14,33 +14,33 @@ $(() => {
     $allBtns.append($btn);
   }
 
-  $('#btn-1').click(() => {
-    const context = new AudioContext();
+  const context = new AudioContext();
 
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
+  const cMajPent = [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99, 880.00, 1046.50, 1174.66, 1318.51, 1567.98, 1760.00, 2093.00];
+  // const onset = ['mousedown', 'keydown'];
+  // const offset = ['mouseup', 'keyup'];
 
-    // oscillator.connect(context.destination);
-    oscillator.connect(gain);
-    gain.connect(context.destination);
-    oscillator.frequency.value = 440;
-    oscillator.type = 'triangle';
+  const assignTone = (btn, pitch, wvfrm) => {
+    $(btn).mousedown(() => {
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      // oscillator.connect(context.destination);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.frequency.value = pitch;
+      oscillator.type = wvfrm;
+      // gain.volume.value = 0;
+      oscillator.start(0);
+      $(btn).mouseup(() => {
+        oscillator.stop(0);
+        oscillator.disconnect(0);
+      });
+    });
+  }
 
-    // gain.volume.value = 0;
-    oscillator.start(0);
-  })
+  for (i = 1; i <= 16; i++) {
+    let thisBtn = '#btn-' + i;
+    console.log(thisBtn);
+    assignTone(thisBtn, cMajPent[i-1], 'sine');
+  }
 });
-
-// const context = new AudioContext();
-//
-// const oscillator = context.createOscillator();
-// const gain = context.createGain();
-//
-// // oscillator.connect(context.destination);
-// oscillator.connect(gain);
-// gain.connect(context.destination);
-// oscillator.frequency.value = 440;
-// oscillator.type = 'triangle';
-//
-// // gain.volume.value = 0;
-// oscillator.start(0);
