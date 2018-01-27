@@ -1,3 +1,5 @@
+// const socket = io.connect('http://localhost:3001');
+
 // Pitches: Move up and down octaves by doubling and halving values, respectively.
 // A4: 440Hz; B4: 493.88; C5: 523.25; D5: 587.33; E5: 659.25; F5: 698.46; G5: 783.99; A5: 880.00; B5: 987.77; C6: 1046.50
 
@@ -15,6 +17,7 @@ $(() => {
   }
 
   const context = new AudioContext();
+  // const note = new Octavian.Note('A#4');
 
   const cMajPent = [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99, 880.00, 1046.50, 1174.66, 1318.51, 1567.98, 1760.00, 2093.00];
   // const onset = ['mousedown', 'keydown'];
@@ -43,4 +46,16 @@ $(() => {
     console.log(thisBtn);
     assignTone(thisBtn, cMajPent[i-1], 'sine');
   }
+
+  $('.btn').mousedown(() => {
+    let $thisBtn = event.target;
+    socket.emit('sound-pad', {
+      btn: $thisBtn.id
+    });
+
+    socket.on('sound-pad', (data) => {
+      console.log(data);
+      assignTone(data.thisBtn, cMajPent[i-1], 'sine')
+    });
+  });
 });
