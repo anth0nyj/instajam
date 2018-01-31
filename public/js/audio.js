@@ -59,7 +59,7 @@ $(() => {
 
   for (let i = 0; i <= 15; i++) {
     $('#btn-'+(i+1)).attr('pitch', cMajPent[i]);
-    $('#btn-'+(i+1)).attr('wvfrm', 'sine');
+    $('#btn-'+(i+1)).attr('wvfrm', 'square');
     console.log($('#btn-'+(i+1)));
     assignTone($('#btn-'+(i+1)), $('#btn-'+(i+1)).attr('pitch'), $('#btn-'+(i+1)).attr('wvfrm'));
   }
