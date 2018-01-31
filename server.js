@@ -21,7 +21,11 @@ io.on('connection', (socket) => {
     io.sockets.emit('chat', data);
   });
 
-  socket.on('sound-pad', (play) => {
-    io.sockets.emit('sound-pad', play)
+  socket.on('sound-pad', (data) => {
+    io.sockets.emit('sound-pad', data)
   });
+
+  socket.on('sound-pad', (data) => {
+    socket.broadcast.emit('sound-pad', data);
+  })
 });

@@ -1,5 +1,5 @@
 // Connection
-const socket = io.connect(process.env.PORT || 'http://localhost:3001');
+const socket = io.connect('http://localhost:3001');
 
 $(() => {
 

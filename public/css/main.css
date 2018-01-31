@@ -1,16 +1,19 @@
-body{
+body {
     font-family: 'Nunito';
 }
 
-h2{
+h2 {
     font-size: 18px;
     padding: 10px 20px;
     color: #575ed8;
 }
 
-.container {
+#container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #sound-pad {
@@ -49,15 +52,16 @@ h2{
 }
 
 #chat{
-    max-width: 600px;
-    margin: 30px auto;
+    width: 600px;
+    height: 260px;
+    /* margin: 30px auto; */
     border: 1px solid #ddd;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.05);
     border-radius: 2px;
 }
 
 #chat-window{
-    height: 250px;
+    height: 140px;
     overflow: auto;
     background: #f9f9f9;
 }
