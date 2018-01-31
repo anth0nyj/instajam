@@ -28,7 +28,9 @@
   </head>
   <body ng-controller="MainController as ctrl">
     <h1 id="headline">InstaJam</h1>
-    
+
+    <div ng-include="'partials/auth.html'"></div>
+
     {{ctrl.test}}
 
     <div id="chat">
