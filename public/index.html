@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="JamApp">
   <head>
     <meta charset="utf-8">
     <title>InstaJam</title>
@@ -15,45 +15,23 @@
   crossorigin="anonymous"></script> -->
     <!-- Socket.io CDN -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <!-- Angular CDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <!-- chat.js link -->
     <script type="text/javascript" src="js/chat.js"></script>
     <!-- audio.js link -->
     <script type="text/javascript" src="js/audio.js"></script>
+    <!-- main.js link -->
+    <script type="text/javascript" src="js/main.js"></script>
     <!-- main.css link -->
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body ng-controller="MainController as ctrl">
     <h1 id="headline">InstaJam</h1>
 
-    <!-- <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form> -->
+    <div ng-include="'partials/auth.html'"></div>
 
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
-    <!-- <script>
-      $( ()=> {
-        const socket = io();
-        // $('.btn').mousedown( () => {
-        //   socket.emit('chat message', 'Button clicked!');
-        // });
-        // socket.on('chat message', (msg) => {
-        //   $('#messages').append($('<li>').text(msg));
-        // });
-
-        $('form').submit( ()=> {
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-        socket.on('chat message', (msg) => {
-          $('#messages').append($('<li>').text(msg));
-        });
-      });
-    </script> -->
-
-    <!-- <script type="text/javascript" src="js/audio.js"></script> -->
+    {{ctrl.test}}
 
     <div id="chat">
       <div id="chat-window">

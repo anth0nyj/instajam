@@ -44,7 +44,7 @@ $(() => {
   for (i = 1; i <= 16; i++) {
     let thisBtn = '#btn-' + i;
     console.log(thisBtn);
-    assignTone(thisBtn, cMajPent[i-1], 'sine');
+    assignTone(thisBtn, cMajPent[i-1], 'square');
   }
 
   $('.btn').mousedown(() => {
