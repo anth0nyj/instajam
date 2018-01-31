@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html ng-app="JamApp">
-  <head>
-    <meta charset="utf-8">
-    <title>InstaJam</title>
-    <!-- jQuery CDN -->
-    <script
-  src="http://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8">
+  <title>InstaJam</title>
+  <!-- jQuery -->
+  <script src="js/jquery-3.3.1.min.js"></script>
   <!-- jQuery UI CDN -->
-    <!-- <script
-  src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script> -->
-    <!-- Socket.io CDN -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-    <!-- Angular CDN -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <!-- chat.js link -->
-    <script type="text/javascript" src="js/chat.js"></script>
-    <!-- audio.js link -->
-    <script type="text/javascript" src="js/audio.js"></script>
-    <!-- main.js link -->
-    <script type="text/javascript" src="js/main.js"></script>
-    <!-- main.css link -->
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body ng-controller="MainController as ctrl">
-    <h1 id="headline">InstaJam</h1>
+  <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <!-- Socket.io CDN -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+  <!-- Angular CDN -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+  <!-- chat.js link -->
+  <script type="text/javascript" src="js/chat.js"></script>
+  <!-- audio.js link -->
+  <script type="text/javascript" src="js/audio.js"></script>
+  <!-- main.js link -->
+  <script type="text/javascript" src="js/main.js"></script>
+  <!-- main.css link -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-    <div ng-include="'partials/auth.html'"></div>
+<body ng-controller="MainController as ctrl">
+  <h1 id="headline">InstaJam</h1>
 
-    {{ctrl.test}}
+  <div ng-include="'partials/auth.html'"></div>
 
-    <div id="chat">
-      <div id="chat-window">
-        <div id="output"></div>
-      </div>
-      <input id="handle" type="text" placeholder="Handle" />
-      <input id="message" type="text" placeholder="Message" />
-      <button id="send">Send</button>
+  <div id="chat">
+    <div id="chat-window">
+      <div id="output"></div>
     </div>
+    <input id="handle" type="text" placeholder="Handle" />
+    <input id="message" type="text" placeholder="Message" />
+    <button id="send">Send</button>
+  </div>
 
-    <script type="text/javascript" src="/js/chat.js"></script>
-  </body>
+  <script type="text/javascript" src="/js/chat.js"></script>
+</body>
+
 </html>
