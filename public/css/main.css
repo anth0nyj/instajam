@@ -8,6 +8,11 @@ h2{
     color: #575ed8;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 #sound-pad {
   background-color: lightgrey;
   width: 260px;
