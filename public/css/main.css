@@ -1,5 +1,13 @@
 body {
-    font-family: 'Nunito';
+    font-family: 'Helvetica';
+    background-color: #364048;
+}
+
+#headline {
+  text-align: center;
+  color: #800;
+  font-family: 'Pacifico', cursive;
+  font-size: 44px;
 }
 
 h2 {
@@ -17,7 +25,7 @@ h2 {
 }
 
 #sound-pad {
-  background-color: lightgrey;
+  background-color: #666;
   width: 260px;
   height: 260px;
   display: flex;
@@ -40,7 +48,7 @@ h2 {
 .btn {
   width: 50px;
   height: 50px;
-  background-color: grey;
+  background-color: #555;
 }
 
 .btn:hover {
@@ -52,62 +60,66 @@ h2 {
 }
 
 #chat{
-    width: 600px;
+    width: 50%;
     height: 260px;
     /* margin: 30px auto; */
-    border: 1px solid #ddd;
+    border: 1px solid #7d7d7d;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.05);
     border-radius: 2px;
 }
 
-#chat-window{
+#chat-window {
     height: 140px;
     overflow: auto;
-    background: #f9f9f9;
+    background: #888;
 }
 
-#messages p{
+#messages p {
     padding: 14px 0px;
     margin: 0 20px;
     border-bottom: 1px solid #e9e9e9;
     color: #555;
 }
 
-#feedback p{
+#feedback p {
     color: #aaa;
     padding: 14px 0px;
     margin: 0 20px;
 }
 
-#messages strong{
+#messages strong {
     color: #575ed8;
 }
 
-label{
+label {
     box-sizing: border-box;
     display: block;
     padding: 10px 20px;
 }
 
-input{
+#output {
+  color: #800;
+}
+
+input {
     padding: 10px 20px;
     box-sizing: border-box;
-    background: #eee;
     border: 0;
     display: block;
     width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    font-family: Nunito;
+    background: #818181;
+    color: #800;
+    border-bottom: 1px solid #7a7a7a;
+    font-family: Helvetica;
     font-size: 16px;
 }
 
-button{
-    background: #575ed8;
+button {
+    background: darkred;
     color: #fff;
     font-size: 18px;
     border: 0;
-    padding: 12px 0;
+    padding: 12px 2px;
     width: 100%;
     border-radius: 0 0 2px 2px;
 }
